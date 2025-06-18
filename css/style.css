@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'Deltarune';
+  src: url('../fonts/deltarune.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-2px, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(2px, 0);
+  }
+}
+
+.shake {
+  animation: shake 0.3s;
+}
+
+body,
+#info {
+  font-family: 'Deltarune', sans-serif;
+  font-size: clamp(12px, 2vw, 24px);
+  color: white;
+  user-select: none;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+}
+
+#info {
+  margin-bottom: 1vh;
+  font-size: clamp(14px, 2.5vw, 28px);
+  position: relative;
+  z-index: 10;
+}
+
+canvas {
+  background-color: black;
+  border: 0.3vw solid #2bff00;
+  display: block;
+  width: 30vw;
+  height: auto;
+  max-height: 80vh;
+}
+
+.background-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/background.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+#characters {
+  position: fixed;
+  top: 50%;
+  left: 1vw;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  z-index: 1000;
+}
+
+#characters img {
+  display: block;
+  width: 8vw;
+  height: auto;
+}
+
+#kris {
+  width: 10vw !important;
+  margin-left: 15vw;
+}
+
+#susie {
+  width: 14vw !important;
+  margin-left: 8vw;
+}
+
+#ralsei {
+  width: 7vw !important;
+  margin-left: 7vw;
+}
+
+#dummy {
+  width: 5vw !important;
+  margin-left: 80vw;
+  margin-right: 10vw;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  width: 30vw;
+  height: auto;
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.top-bar.show {
+  transform: translateY(0);
+}
+
+button {
+  position: relative;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-family: 'Deltarune', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.hover-text {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  padding: 4px 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+#toggleBtn:hover .hover-text {
+  opacity: 1;
+  pointer-events: auto;
+}

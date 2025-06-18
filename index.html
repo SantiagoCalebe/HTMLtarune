@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Htmltarune</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="backgroundGif" class="background-gif"></div>
+
+    <div id="topBar" class="top-bar">
+      <button id="about">About</button>
+      <button id="toggleBtn">
+        <span class="label">Hide Background</span>
+        <span class="hover-text">No performance impact, unless on weaker PCs.</span>
+      </button>
+    </div>
+
+    <div id="info">
+      HP: <span id="hpValue"></span> | Dodges: <span id="dodgeValue"></span>
+    </div>
+
+    <img src="img/logo.png" class="logo" />
+    <canvas id="gameCanvas" width="300" height="300"></canvas>
+
+    <div id="characters">
+      <img id="kris" src="img/chr/krisIdle.gif" alt="Kris" />
+      <img id="ralsei" src="img/chr/ralseiIdle.gif" alt="Ralsei" />
+      <img id="susie" src="img/chr/susieIdle.gif" alt="Susie" />
+      <img id="dummy" src="img/chr/dummy.gif" alt="dummy" />
+    </div>
+
+    <script type="module" src="js/game.js"></script>
+    <script src="js/topBar.js"></script>
+    <script src="js/backgroundOpacity.js"></script>
+  </body>
+</html>
